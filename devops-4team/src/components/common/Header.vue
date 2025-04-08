@@ -20,12 +20,25 @@
       </li>
     </ul>
     <div class="col-md-3 text-end">
-      <button type="button" class="btn btn-outline-secondary">Logout</button>
+      <button type="button" class="btn btn-outline-secondary" @click="logout">Logout</button>
     </div>
   </header>
 </template>
 
 <script setup>
+import { useAuthStore } from '@/store/auth';
+import axios from 'axios';
+
+const authStore = useAuthStore();
+// 나중에 사용자 이름이나 로그인 유무 필요할때 사용
+// const isLoggedIn = authStore.isLoggedIn;
+// const userInfo = authStore.userInfo;
+
+const logout = () => {
+   if (confirm('정말로 로그아웃하시겠습니까?')) {
+        authStore.logout();
+    }
+};
 
 </script>
 
