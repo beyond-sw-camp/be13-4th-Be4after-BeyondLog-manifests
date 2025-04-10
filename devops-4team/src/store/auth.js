@@ -113,6 +113,5 @@ export const useAuthStore = defineStore('auth', () => {
             return null;
         }
     };
-
     return { isLoggedIn, userInfo, login, checkLogin, logout };
 });

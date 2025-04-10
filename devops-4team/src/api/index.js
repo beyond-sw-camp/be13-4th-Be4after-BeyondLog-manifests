@@ -31,6 +31,7 @@ apiClient.interceptors.response.use(
             originalRequest._retry = true;
 
             const refreshToken = localStorage.getItem('refreshToken');
+          
             if (!refreshToken) {
                 console.log("리프레시 토큰이 없습니다.");
                 return Promise.reject(error);
