@@ -5,6 +5,7 @@ const QnAList = () => import("@/views/QnA/QnAList.vue");
 const QnAadd = () => import("@/views/QnA/QnAadd.vue");
 const QnADetail = () => import("@/views/QnA/QnADetail.vue");
 const BaseLayout = () => import("@/components/layout/BaseLayout.vue");
+const Login = () => import('@/views/Login.vue')
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +21,11 @@ const router = createRouter({
                 {path: "qna/:id", name: "qnaDetail", component: QnADetail},
             ],
         },
+        {
+            path: '/login',
+            name: 'login',
+            component: Login
+        }
     ],
 });
 
