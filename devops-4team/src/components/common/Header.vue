@@ -14,25 +14,25 @@
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap" /></svg>
             <span class="fs-4">Beyond SW Camp</span>
         </a>
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <RouterLink class="nav-link" :to="{name: 'home'}">HOME</RouterLink>
-      </li>
-      <li class="nav-item">
-        <RouterLink class="nav-link" :to="{name: 'qna'}">QnA</RouterLink>
-      </li>
-    </ul>
-    <div class="col-md-3 text-end">
-      <button v-if="isLoggedIn" type="button" class="btn btn-outline-secondary" @click="logout">Logout</button>
-      <button v-else type="button" class="btn btn-outline-secondary"><RouterLink :to="{ name: 'login' }">Login</RouterLink></button>
-    </div>
-  </header>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <RouterLink class="nav-link" :to="{name: 'home'}">HOME</RouterLink>
+            </li>
+            <li class="nav-item">
+                <RouterLink class="nav-link" :to="{name: 'qna'}">QnA</RouterLink>
+            </li>
+        </ul>
+        <div class="col-md-3 text-end">
+            <button v-if="isLoggedIn" type="button" class="btn btn-outline-secondary" @click="logout">Logout</button>
+            <button v-else type="button" class="btn btn-outline-secondary"><RouterLink :to="{name: 'login'}">Login</RouterLink></button>
+        </div>
+    </header>
 </template>
 
 <script setup>
-import { useAuthStore } from '@/store/auth';
-import { computed } from 'vue';
-import axios from 'axios';
+import {useAuthStore} from "@/store/auth";
+import {computed} from "vue";
+import axios from "axios";
 
 const authStore = useAuthStore();
 // 나중에 사용자 이름이나 로그인 유무 필요할때 사용
@@ -40,9 +40,10 @@ const isLoggedIn = computed(() => authStore.isLoggedIn); // 반응형으로 감�
 const userInfo = authStore.userInfo;
 
 const logout = () => {
-   if (confirm('정말로 로그아웃하시겠습니까?')) {
+    if (confirm("정말로 로그아웃하시겠습니까?")) {
         authStore.logout();
     }
 };
+</script>
 
 <style scoped></style>
