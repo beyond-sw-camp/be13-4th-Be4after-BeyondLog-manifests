@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 const Home = () => import('@/views/Home.vue');
 const QnA = () => import('@/views/QnA.vue');
 const BaseLayout = () => import('@/components/layout/BaseLayout.vue');
+const Login = () => import('@/views/Login.vue')
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,6 +24,11 @@ const router = createRouter({
                     component: QnA
                 }
             ]
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: Login
         }
     ]
 });
