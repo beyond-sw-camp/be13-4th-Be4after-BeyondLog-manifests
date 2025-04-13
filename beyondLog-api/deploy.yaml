@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: beyondLog-api-deploy
+  name: beyondlog-api-deploy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: beyondLog-api
+      app: beyondlog-api
   template:
     metadata:
       labels:
-        app: beyondLog-api
+        app: beyondlog-api
     spec:
       containers:
-      - name: beyondLog-api
-        image: godbyul/beyondLog-api:29
+      - name: beyondlog-api
+        image: godbyul/beyondlog-api:29
         resources:
           requests:
             memory: "128Mi"
