@@ -11,7 +11,7 @@ pipeline {
                     sh 'pwd'
                     sh 'ls -al'
                     sh 'git checkout main'
-                    sh "sed -i 's|godbyul/beyondLog-api:.*|godbyul/beyondLog-api:${params.DOCKER_IMAGE_VERSION}|g' deploy.yaml"
+                    sh "sed -i 's|godbyul/beyondlog-api:.*|godbyul/beyondlog-api:${params.DOCKER_IMAGE_VERSION}|g' deploy.yaml"
                     sh 'cat deploy.yaml'
                 }
             }
