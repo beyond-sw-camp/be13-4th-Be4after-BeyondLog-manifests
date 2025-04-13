@@ -31,7 +31,7 @@ pipeline {
                     usernameVariable: 'GIT_USERNAME',
                     passwordVariable: 'GIT_PASSWORD'
                 )]) {
-                    sh "git remote set-url origin https://$GIT_USERNAME:$GIT_PASSWORD@github.com/beyond-sw-camp/be13-4th-Be4after-BeyondLog.git"
+                    sh "git remote set-url origin https://$GIT_USERNAME:$GIT_PASSWORD@github.com/beyond-sw-camp/be13-4th-Be4after-BeyondLog-manifests.git"
                     sh 'git push -u origin develop'
                 }
             }
