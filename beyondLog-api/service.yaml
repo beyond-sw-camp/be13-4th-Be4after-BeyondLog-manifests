@@ -3,9 +3,10 @@ kind: Service
 metadata:
   name: beyondlog-api-service
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: beyondlog-api
   ports:
   - port: 8088
     targetPort: 8088
+    nodePort: 30098
