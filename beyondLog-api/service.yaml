@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: beyondLog-api-service
+spec:
+  type: ClusterIP
+  selector:
+    app: beyondLog-api
+  ports:
+  - port: 8088
+    targetPort: 8088
