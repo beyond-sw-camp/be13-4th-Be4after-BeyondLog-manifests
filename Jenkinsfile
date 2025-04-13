@@ -10,7 +10,7 @@ pipeline {
                     echo "${params.DOCKER_IMAGE_VERSION}"
                     sh 'pwd'
                     sh 'ls -al'
-                    sh 'git checkout main'
+                    sh 'git checkout develop'
                     sh "sed -i 's|godbyul/beyondlog-api:.*|godbyul/beyondlog-api:${params.DOCKER_IMAGE_VERSION}|g' deploy.yaml"
                     sh 'cat deploy.yaml'
                 }
