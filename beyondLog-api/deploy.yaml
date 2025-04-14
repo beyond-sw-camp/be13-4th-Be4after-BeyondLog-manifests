@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: beyondlog-api-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: beyondlog-api
+  template:
+    metadata:
+      labels:
+        app: beyondlog-api
+    spec:
+      containers:
+      - name: beyondlog-api
+        image: godbyul/beyondlog-api:28
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "500m"
+          limits:
+            memory: "512Mi"
+            cpu: "1000m"
+        ports:
+        - containerPort: 8088
