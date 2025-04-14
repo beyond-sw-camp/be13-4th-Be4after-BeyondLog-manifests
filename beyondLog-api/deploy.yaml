@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: beyondlog-api
-        image: godbyul/beyondlog-api:26
+        image: godbyul/beyondlog-api:27
         resources:
           requests:
             memory: "256Mi"
